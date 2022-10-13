@@ -5,6 +5,7 @@
 #include <iomanip>
 using namespace std;
 
+
 double smallest(double x, double y, double z);
 double average(double x, double y, double z);
 
@@ -16,20 +17,39 @@ int main() {
     cout << "Enter three numbers: ";
     cin >> x >> y >> z;
     cout << endl;
-    
-    double small;
+
+    double result;
     if (x < y && x < z) {
-        small = x;
+        result = x;
     }
     if (y < x && y < z) {
-        small = y;
+        result = y;
     }
     if (z < x && z < y) {
-        small = z;
+        result = z;
     }
-    cout << "Smallest value is " << small << endl;
-    
+    cout << "Smallest value is " << smallest( x, y, z) << endl;
+
     double avg;
     avg = (x + y + z) / 3;
-    cout << "Average is " << avg << endl;
+    cout << "Average is " << average( x, y, z) << endl;
+}
+
+double smallest(double x, double y, double z) {
+    double result;
+    if (x < y && x < z) {
+        result = x;
+    }
+    if (y < x && y < z) {
+        result = y;
+    }
+    if (z < x && z < y) {
+        result = z;
+    }
+    return result;
+}
+double average(double x, double y, double z) {
+    double avg = 0;
+    avg = (x + y + z) / 3;
+    return avg;
 }
